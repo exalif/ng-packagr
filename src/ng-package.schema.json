@@ -79,6 +79,11 @@
         "umdId": {
           "description": "ID for the UMD bundle. By default, uses a value derived from the entry point's module ID (i.e., name property in package.json)",
           "type": "string"
+        },
+        "rollupInterop": {
+          "description": "Rollup interop output option",
+          "type": ["boolean", "string"],
+          "default": true
         }
       }
     }

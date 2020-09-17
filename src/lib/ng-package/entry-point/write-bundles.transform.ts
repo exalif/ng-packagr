@@ -35,6 +35,7 @@ export const writeBundlesTransform: Transform = transformFromPromise(async graph
     },
     entry: esm2015,
     dependencyList: getDependencyListForGraph(graph),
+    interop: ngEntryPoint.rollupInterop,
   };
 
   log.info('Bundling to FESM2015');

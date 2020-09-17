@@ -1,4 +1,5 @@
 import * as path from 'path';
+import { GetInterop, InteropType } from 'rollup';
 import { NgPackageConfig } from '../../../ng-package.schema';
 import { CssUrl } from '../../styles/stylesheet-processor';
 
@@ -122,6 +123,10 @@ export class NgEntryPoint {
     return this.$get('lib.cssUrl');
   }
 
+  public get rollupInterop(): InteropType | GetInterop {
+    return this.$get('lib.rollupInterop');
+  }
+
   public get umdModuleIds(): { [key: string]: string } {
     return this.$get('lib.umdModuleIds');
   }
@@ -132,7 +137,7 @@ export class NgEntryPoint {
 
   public get styleIncludePaths(): string[] {
     const includePaths = this.$get('lib.styleIncludePaths') || [];
-    return includePaths.map((includePath) =>
+    return includePaths.map(includePath =>
       path.isAbsolute(includePath) ? includePath : path.resolve(this.basePath, includePath),
     );
   }

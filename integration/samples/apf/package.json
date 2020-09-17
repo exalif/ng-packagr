@@ -15,7 +15,8 @@
   },
   "ngPackage": {
     "lib": {
-      "entryFile": "public_api.ts"
+      "entryFile": "public_api.ts",
+      "rollupInterop": false
     }
   },
   "devDependencies": {

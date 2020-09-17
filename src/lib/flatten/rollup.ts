@@ -24,6 +24,7 @@ export interface RollupOptions {
   transform?: TransformHook;
   dependencyList?: DependencyList;
   cache?: rollup.RollupCache;
+  interop?: rollup.OutputOptions['interop'];
 }
 
 /** Runs rollup over the given entry file, writes a bundle file. */
@@ -73,6 +74,7 @@ export async function rollupBundleFile(opts: RollupOptions): Promise<rollup.Roll
     format: opts.format,
     amd: opts.amd,
     file: opts.dest,
+    interop: opts.interop,
     banner: '',
     globals: moduleId => umdModuleIdStrategy(moduleId, opts.umdModuleIds || {}),
     sourcemap: true,
