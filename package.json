@@ -1,6 +1,6 @@
 {
   "name": "@exalif/ng-packagr",
-  "version": "10.2.0",
+  "version": "10.2.0-alpha.1",
   "description": "Compile and package a TypeScript library to Angular Package Format",
   "keywords": [
     "angular",
